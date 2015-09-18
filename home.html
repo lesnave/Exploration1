@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+function replaceIt(){
+	$.ajax({
+	type: "POST",
+	url: "helper.php",
+	data: "action=replace",
+	cache: false,
+	success: function(data)
+	{
+		$("#replace").html(data);
+	}
+	});
+}
+<body>
+<h1 id = "replace">Replace me </h1>
+<button type="button" onclick="replaceIt()">Make it Happen</button>
+</body>
+</html>
